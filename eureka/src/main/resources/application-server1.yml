@@ -1,0 +1,14 @@
+##eureka-server1节点配置，配置参数--spring.profiles.active=eureka-server1来启动该环境
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: eureka-server1
+  client:
+    service-url:
+      defaultZone: http://eureka-server1:8761/eureka/,http://eureka-server2:8762/eureka/
+    registry-fetch-interval-seconds: 3
